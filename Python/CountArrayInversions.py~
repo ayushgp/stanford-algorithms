@@ -18,6 +18,4 @@ def countArrayInv(a):
     result+=x[j:]
     result+=y[i:]
     return [result,numinv]
-a=[1,5,4,3,2]
-print a
-print countArrayInv(a)
+
