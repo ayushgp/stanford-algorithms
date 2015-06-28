@@ -45,6 +45,42 @@ template<class T> void Graph<T>::addEdge(T t1,T t2){
 }
 
 /*
+    function to remove a node and all its associated edges from the graph.
+*/
+template<class T> void Graph<T>::removeNode(T t){
+    int i;
+    FOR(i,nodes.size()){
+        if(nodes[i]==t){
+            nodes.erase(nodes.begin()+i);
+        }
+    }
+    FOR(i,edges.size()){
+        if(edges[i].first==t || edges[i].second==t){
+            edges.erase(edges.begin()+i);
+            i-=1;       //because on removal vector shifts one back
+        }
+    }
+}
+
+/*
+    Function to remove edges from graph.
+*/
+template<class T> void Graph<T>::removeEdge(T t1, T t2){
+    int i;
+    if(graphType){
+        FOR(i,edges.size()){
+            if(edges[i].first==t1 && edges[i].second==t2)
+                edges.erase(edges.begin()+i);
+        }
+    }
+    else{
+        FOR(i,edges.size()){
+            if((edges[i].first==t1 && edges[i].second==t2) || (edges[i].first==t2 && edges[i].second==t1))
+                edges.erase(edges.begin()+i);
+        }
+    }
+}
+/*
 Function to print all the nodes of the Graph
 */
 template<class T> void Graph<T>::printNodes(){

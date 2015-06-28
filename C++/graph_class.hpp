@@ -20,6 +20,10 @@ public:
     void addNode(T);
     void addEdge(T,T);
 
+    //Remove nodes and edges
+    void removeNode(T);
+    void removeEdge(T,T);
+
     //Print the graph
     void printNodes();
     void printEdges();
@@ -30,6 +34,7 @@ public:
 
     //Shortest Paths
     int shortestPathDistanceBFS(T,T);
+
     //Neighbours
     vector<T> neighbours(T);
 };

@@ -33,8 +33,14 @@ template<class T> void tester(Graph<T>* G){
 	G->addEdge(5,3);
 	G->addEdge(3,2);
 	cout<<G->shortestPathDistanceBFS(1,8)<<endl;
-	// G->printNodes();
-	// G->printEdges();
+ 	G->printNodes();
+	cout<<endl;
+	G->printEdges();
+	G->removeEdge(1,5);
+	cout<<"called remove edge"<<endl;
+	G->printNodes();
+	cout<<endl;
+	G->printEdges();
 	// vector<int> a = G->breadthFirstSearch(1);
 	// FOR(i,a.size())
 	// 	cout<<a[i]<<endl;
