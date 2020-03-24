@@ -12,7 +12,7 @@ def partition(a):
     a[0],a[j-1]=a[j-1],a[0]
     return j-1,a                #return index of pivot and the partitioned array
 def quickSort(a):
-    if len(a)>2:
+    if len(a)>=2:
         x,b=partition(a)        #Partition the array
         c=quickSort(b[:x])      #sort the left half
         d=quickSort(b[x+1:])    #sort the right half
